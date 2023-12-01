@@ -1,4 +1,4 @@
-data = [i.strip() for i in open('day1.in')]
+data = [i.strip() for i in open('day01.in')]
 sw = {'one':'o1e', 'two':'t2o', 'three':'t3e', 'four':'f4r', 'five':'f5e', 'six':'s6x', 'seven':'s7n', 'eight':'e8t', 'nine':'n9e'}
 
 def valnum(k):
