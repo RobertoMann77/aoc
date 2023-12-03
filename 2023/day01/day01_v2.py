@@ -1,4 +1,4 @@
-data = [i.strip() for i in open('day01.in')]
+data = [i.strip() for i in open('1.in')]
 
 s1 = 0
 s2 = 0
