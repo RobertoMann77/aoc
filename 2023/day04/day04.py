@@ -1,18 +1,20 @@
-data = [i.strip() for i in open('t.in')]
+data = [i.strip() for i in open('4.in')]
 
 sum1 = 0
 cc = []  #cardcount   [score,#]
+
 for line in data:
   a,b = line.split('|')
   c,d = a.split(':')
- 
+  
   wnum = [int(i) for i in d.split()]
   ynum = [int(i) for i in b.split()]
   
   c = 0  #count
   s = 0  #score
-  for number in ynum:
-    if number in wnum: c += 1
+
+  c = len(set(wnum) & set(ynum))   
+  
   if c == 1: s = 1
   elif c: s += 2**(c-1)
   cc.append([c,1])
