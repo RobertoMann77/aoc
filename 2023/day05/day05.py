@@ -1,25 +1,12 @@
-# input file must have an empty line at the ending !!!!!!
-# otherwise no block nr 6 at the end!!!
-data = [i.strip() for i in open('5.in')]
-a, seeds = data.pop(0).split(':')
-seeds = [int(i) for i in seeds.split()]
+seeds, *changes = open('t.in').read().split('\n\n')
+seeds = list(map(int, seeds.split(":")[1].split()))
 
-data.pop(0)
 blocks = []
-new = []
-
-for line in data:
-  if line: new.append(line)
-  else:
-    blocks.append(new)
-    new = []
-
-for b, block in enumerate(blocks):
-  block.pop(0)
-  for l, line in enumerate(block):
-    blocks[b][l] = blocks[b][l].split()
-    for i, entry in enumerate(blocks[b][l]):
-      blocks[b][l][i] = int(blocks[b][l][i])
+for block in changes:
+  ranges = []
+  for line in block.splitlines()[1:]:
+      ranges.append(list(map(int, line.split())))
+  blocks.append(ranges)
 
 def calc(r):
   for i in range(len(blocks)):
@@ -53,7 +40,7 @@ print('Answer 1:', min(loc))
 
 #part 2
 #p = 0  
-p = 23730000  #to lower the comute time
+p = 23730000  #to lower the compute time
 found = 0
 while found == 0:
   cal = revcal(p)
