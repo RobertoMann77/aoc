@@ -1,3 +1,5 @@
+# input: https://adventofcode.com/2023/day/6
+
 import math
 tges =  [53,91,67,68]
 dist =  [250,1330,1081,1025]
