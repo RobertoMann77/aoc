@@ -1,3 +1,5 @@
+# input: https://adventofcode.com/2023/day/2
+
 data = [i.strip() for i in open('2.in')]
 
 sum1 = 0
