@@ -1,21 +1,17 @@
 #https://adventofcode.com/2023/day/7
 
-data = [i.strip() for i in open('7.in')]
-
 from collections import Counter
-
 data = [i.strip() for i in open('7.in')]
 
 #part 1  erase all joker lines!!!
 #cards = '23456789TJQKA'  #part 1
 cards = 'J23456789TQKA'  #part 2
-
 rank = [[] for i in range(7)]  #list of cards with same rank
 
 for card in data:
   hand, bid = card.split()
   found = []
-  p = 0  #rank of card
+  p = 0  #rank of hand
   jok = hand.count('J')
 
   for c in cards:
@@ -55,7 +51,6 @@ for card in data:
     else: p = 1
   rank[p].append((hand, bid, p))
 
-
 def card_sort(pile):
   for i in range(len(pile) - 1):
     for j in range(i + 1, len(pile)):
@@ -66,17 +61,10 @@ def card_sort(pile):
         elif cards.index(pile[i][0][k]) < cards.index(pile[j][0][k]):
           break
 
-
-for i in range(7):
-  card_sort(rank[i])
-
+for i in range(7): card_sort(rank[i])
 all_cards = []
-for i in range(7):
-  all_cards += rank[i]
-
+for i in range(7): all_cards += rank[i]
 sum = 0
-for i, r in enumerate(all_cards):
-  print(r)
-  sum += (i + 1) * int(r[1])
-
+for i, r in enumerate(all_cards): sum += (i + 1) * int(r[1])
 print('Answer 2:', sum)
+
