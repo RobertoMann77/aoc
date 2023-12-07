@@ -1,3 +1,5 @@
+# input: https://adventofcode.com/2023/day/3
+
 data = [i.strip() for i in open('3.in')]
 
 for l in range(len(data)): data[l] = '.' + data[l] + '.'
