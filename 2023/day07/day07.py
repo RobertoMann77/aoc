@@ -1,3 +1,5 @@
+#https://adventofcode.com/2023/day/7
+
 data = [i.strip() for i in open('7.in')]
 
 #part 1  erase all joker lines!!!
