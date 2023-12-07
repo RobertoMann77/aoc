@@ -1,3 +1,5 @@
+# input: https://adventofcode.com/2023/day/5
+
 seeds, *changes = open('t.in').read().split('\n\n')
 seeds = list(map(int, seeds.split(":")[1].split()))
 
