@@ -8,7 +8,7 @@ data.pop(0)
 
 for line in data:
     part = line.split()
-    M[part[0]] = eval('(\'' + part[2][1:-1] + '\',\''+ part[3][:-1] + '\')')
+    M[part[0]] = [part[2][1:-1] , part[3][:-1]]
 
 def count_steps1(p):      # part 1
     count = 0
