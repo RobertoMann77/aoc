@@ -1,7 +1,6 @@
 # input: https://adventofcode.com/2023/day/11#part2
 
 import numpy as np
-import copy
 
 M = [i.strip() for i in open('11.in')]
 			
