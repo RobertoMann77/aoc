@@ -4,20 +4,10 @@ import numpy as np
 import copy
 
 M = [i.strip() for i in open('11.in')]
-
-def print_grid(R):
-	for s in R:
-		l = ''
-		for t in s: 
-			l += t
-		print(l)
-
-# build grid				
-for l in range(len(M)):
-	M[l] = list(M[l])
+			
+for l in range(len(M)):	M[l] = list(M[l])
 M = np.array(M)  
 
-# find dimensions
 rows = len(M)
 col = len(M[0])
 
@@ -41,7 +31,6 @@ for r in range(rows):
 			galaxies.append((r,c))
 			M[r][c] = len(galaxies)
 
-# calculate distances
 dist1 = {}
 dist2 = {}
 for gal in galaxies:
