@@ -13,8 +13,7 @@ col = len(M[0])
 
 empty_rows = []
 for i,row in enumerate(M):
-	if '#' not in row:
-		empty_rows.append(i)
+	if '#' not in row: empty_rows.append(i)
 		
 empty_cols = []
 for c in range(col):
@@ -24,32 +23,27 @@ for c in range(col):
 	if not found: empty_cols.append(c)
 
 
-galaxies = []
+galax = []
 for r in range(rows):
 	for c in range(col):
-		if M[r][c] == '#': 
-			galaxies.append((r,c))
-			M[r][c] = len(galaxies)
+		if M[r][c] == '#': galax.append((r,c))
+			
 
 dist1 = {}
 dist2 = {}
-for gal in galaxies:
-	for look in galaxies:
-		if gal != look and (galaxies.index(look)+1,galaxies.index(gal)+1) not in dist1:
+for gal in galax:
+	for look in galax:
+		if gal != look and (look,gal) not in dist1:
 			count = 0
-			for r in empty_rows:
-				if min(gal[0],look[0]) < r < max(gal[0],look[0]): count += 1
-			for c in empty_cols:
-				if min(gal[1],look[1]) < c < max(gal[1],look[1]): count += 1
-			dist1[galaxies.index(gal)+1,galaxies.index(look)+1] = abs(gal[0] - look[0]) + abs(gal[1] - look[1]) + count * 999999
-			dist2[galaxies.index(gal)+1,galaxies.index(look)+1] = abs(gal[0] - look[0]) + abs(gal[1] - look[1]) + count * 1
+			for r in empty_rows: if min(gal[0],look[0]) < r < max(gal[0],look[0]): count += 1
+			for c in empty_cols: if min(gal[1],look[1]) < c < max(gal[1],look[1]): count += 1
+			dist1[(gal,look)] = abs(gal[0] - look[0]) + abs(gal[1] - look[1]) + count * 999999
+			dist2[(gal,look)] = abs(gal[0] - look[0]) + abs(gal[1] - look[1]) + count * 1
 
 sum1 = 0
 sum2 = 0
-for r in dist1:
-	sum1 += dist1[r]
-for r in dist2:
-	sum2 += dist2[r]
+for r in dist1: sum1 += dist1[r]
+for r in dist2: sum2 += dist2[r]
 print('Answer 1:',sum1)
 print('Answer 2:',sum2)
 
