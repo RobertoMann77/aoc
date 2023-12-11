@@ -1,6 +1,6 @@
 #input: https://adventofcode.com/2023/day/10
 
-M = [i.strip() for i in open('t.in')]
+M = [i.strip() for i in open('10.in')]
 for l in range(len(M)): M[l] = list(M[l])
 
 def print_grid(R):
@@ -71,11 +71,11 @@ def go(z):
 	return ((pos[0]+y,pos[1]+x),d)	# from z to next pos
 
 if rows > 30: M[S[0]][S[1]] = '-'	# 10.in
-else: M[S[0]][S[1]] = '7'				# t.in
+else: M[S[0]][S[1]] = 'F'				# t.in
 
 # find way
 old = (S,'r')			# direction must be entered
-new = ((0,0),'u')		# because of while loop
+new = ((0,0),'l')		# because of while loop
 count = 0
 trace = []				
 while new[0] != S:	# find a way on round
@@ -90,56 +90,37 @@ for s in range(len(M)):
 		for t in range(len(M[0])): 
 			if (s,t) not in trace : empty.append((s,t))
 
-def trap(pos):			# check if pos is trapped all around
-	visited = []
-	curr = [pos]
-	if pos[0] == 0 or pos[0] == rows -1 or pos[1] == 0 or pos[1] == col -1: return False
-	while curr:
-		test = curr.pop()
-		dr = (0,0,-1,1)
-		dc = (-1,1,0,0)
-		for n in range(4):
-			r = test[0] + dr[n]
-			c = test[1] + dc[n]
-			#print((r,c),M[r][c])
-			if 0 <= r < rows and 0 <= c < col:
-				if M[r][c] == '.' and (r,c) not in visited:
-					visited.append((r,c))
-					curr.append((r,c))
-					if r == 0 or r == rows -1 or c == 0 or c == col -1:
-						return False
-	return True
-
-found = []
 sum1 = 0
 for test in empty:
 	r = test[0]
 	c = test[1]
 	count = 0
-	if trap((r,c)) == True:			# chek if test is trapped
-		fc = 0 	# counter for F
-		lc = 0 	# counter for L
-		for i in range(c+1,col):	# count pipes on trace from pos to right boarder
-			if M[r][i] == '|' and (r,i) in trace: count += 1
-			if M[r][i] == 'J' and (r,i) in trace:					# taking care of edges in pipe
-				if fc == 1:
-					count += 1
-					fc = 0
-				if lc == 1:
-					lc = 0
-			if M[r][i] == '7' and (r,i) in trace:
-				if lc == 1:
-					count += 1
-					lc = 0
-				if fc == 1:
-					fc = 0
-			if M[r][i] == 'F' and (r,i) in trace: fc = 1
-			if M[r][i] == 'L' and (r,i) in trace: lc = 1
-		if count % 2 == 1:
-			found.append((r,c))
-			sum1 += 1
-			
+	
+	fc = 0 	# counter for F
+	lc = 0 	# counter for L
+	way = ''
+	for i in range(c+1,col):	# count pipes on trace from pos to right boarder
+		way += M[r][i]
+		if M[r][i] == '|' and (r,i) in trace: count += 1
+		if M[r][i] == 'J' and (r,i) in trace:					# taking care of edges in pipe
+			if fc == 1:
+				count += 1
+				fc = 0
+			if lc == 1:
+				lc = 0
+		if M[r][i] == '7' and (r,i) in trace:
+			if lc == 1:
+				count += 1
+				lc = 0
+			if fc == 1:
+				fc = 0
+		if M[r][i] == 'F' and (r,i) in trace: fc = 1
+		if M[r][i] == 'L' and (r,i) in trace: lc = 1
+	if count % 2 == 1:
+		sum1 += 1
+	#print(test,way,count_right)
 print('Answer 2:',sum1)
+
 
 
 
