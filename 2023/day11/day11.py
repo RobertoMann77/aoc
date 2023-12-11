@@ -1,6 +1,9 @@
 # input: https://adventofcode.com/2023/day/11#part2
 
+# input: https://adventofcode.com/2023/day/11#part2
+
 import numpy as np
+
 
 M = [i.strip() for i in open('11.in')]
 			
@@ -34,8 +37,10 @@ for gal in galax:
 	for look in galax:
 		if gal != look and (look,gal) not in dist1:
 			count = 0
-			for r in empty_rows: if min(gal[0],look[0]) < r < max(gal[0],look[0]): count += 1
-			for c in empty_cols: if min(gal[1],look[1]) < c < max(gal[1],look[1]): count += 1
+			for r in empty_rows: 
+				if min(gal[0],look[0]) < r < max(gal[0],look[0]): count += 1
+			for c in empty_cols: 
+				if min(gal[1],look[1]) < c < max(gal[1],look[1]): count += 1
 			dist1[(gal,look)] = abs(gal[0] - look[0]) + abs(gal[1] - look[1]) + count * 999999
 			dist2[(gal,look)] = abs(gal[0] - look[0]) + abs(gal[1] - look[1]) + count * 1
 
@@ -45,4 +50,3 @@ for r in dist1: sum1 += dist1[r]
 for r in dist2: sum2 += dist2[r]
 print('Answer 1:',sum1)
 print('Answer 2:',sum2)
-
