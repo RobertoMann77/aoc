@@ -1,6 +1,5 @@
 # input: https://adventofcode.com/2023/day/15
 
-#TEST
 data = open('15.in').read().split(',')
 
 def doit(raw_c,cv):
