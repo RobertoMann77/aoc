@@ -1,12 +1,13 @@
 # input: https://adventofcode.com/2023/day/15
 
+#TEST
 data = open('15.in').read().split(',')
 
 def doit(raw_c,cv):
 	cv += ord(raw_c)
 	cv *= 17
 	return cv % 256
-sum1 = 0
+sum1 = 0 
 for line in data:
 	cv = 0
 	for buchst in line: cv = doit(buchst,cv)
