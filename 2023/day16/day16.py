@@ -7,9 +7,9 @@ def move(posdir):
 	dc = 0
 	dr = 0
 	if d == 'e': dc = 1
-	if d == 'w': dc = -1
-	if d == 'n': dr = -1
-	if d == 's': dr = +1
+	elif d == 'w': dc = -1
+	elif d == 'n': dr = -1
+	elif d == 's': dr = +1
 	
 	nr = posdir[0][0] + dr
 	nc = posdir[0][1] + dc
@@ -77,9 +77,9 @@ for row_st in range(cols):
 '''
 
 # from south
-for col_st in range(cols):
-	hist = [((rows, col_st), 'n')]				
+for col_st in range(cols):				
 	curr = [((rows, col_st), 'n')]
+	hist = [((rows, col_st), 'n')]
 
 	while curr:
 		new = (move(curr.pop(0)))
