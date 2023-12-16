@@ -6,6 +6,7 @@ def move(posdir):
 	
 	dc = 0
 	dr = 0
+	
 	if d == 'e': dc = 1
 	elif d == 'w': dc = -1
 	elif d == 'n': dr = -1
@@ -15,29 +16,31 @@ def move(posdir):
 	nc = posdir[0][1] + dc
 
 	if  0 <= nr < rows and 0 <= nc < cols:
-		if M[nr][nc] == '.':
+		m = M[nr][nc]
+		if m == '.':
 			nd = d
-		elif M[nr][nc] == '|':	
+		elif m == '|':	
 			if d == 's' or d == 'n':
 				nd = d
 			elif d == 'e' or d == 'w':
 				N.append(((nr,nc),'n'))
 				nd = 's'
 
-		elif M[nr][nc] == '-':	
+		elif m == '-':	
 			if d == 'e' or d == 'w': 
 				nd = d
 			elif d == 'n' or d == 's':
 				N.append(((nr,nc),'e'))
 				nd = 'w'
 
-		elif M[nr][nc] == '\\':	
+		elif m == '\\':	
 			if d == 'e': nd = 's'
 			elif d == 'w': nd = 'n'
 			elif d == 'n': nd = 'w'
 			elif d == 's': nd = 'e'
 			N.append(((nr,nc),nd))
-		elif M[nr][nc] == '/':
+
+		elif m == '/':
 			if d == 'e': nd = 'n'
 			elif d == 'w': nd = 's'
 			elif d == 'n': nd = 'e'
@@ -45,7 +48,7 @@ def move(posdir):
 		N.append(((nr,nc),nd))
 	return N
 		
-M = [i.strip() for i in open('16.in')]
+M = [i.strip() for i in open('t.in')]
 
 for l in range(len(M)):
 	M[l] = list(M[l])
