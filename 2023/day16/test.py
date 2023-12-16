@@ -1,5 +1,5 @@
 def count_tiles(p):
-	hist = [p]				
+	hist = [p]	
 	curr = [p]
 	tiles = set()
 	while curr:
