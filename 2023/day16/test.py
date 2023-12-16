@@ -49,7 +49,7 @@ cols = len(M[0])
 print('Answer 1:',count_tiles(((0, -1), 1)))
 
 
-record = []
+'''record = []
 
 for c in range(cols):
 	record.append(count_tiles(((-1, c), 2)))
@@ -63,7 +63,7 @@ for r in range(cols):
 for r in range(cols):
 	record.append(count_tiles(((r, rows), 3)))
 	
-print('Answer 2:',max(record))
+print('Answer 2:',max(record))'''
 
 
 
