@@ -2,7 +2,6 @@ import numpy as np
 
 def move(posdir):
 	N = []				
-	pos = posdir[0]
 	d = posdir[1]
 	
 	dc = 0
@@ -12,40 +11,41 @@ def move(posdir):
 	if d == 'n': dr = -1
 	if d == 's': dr = +1
 	
-	nr = pos[0] + dr
-	nc = pos[1] + dc
+	nr = posdir[0][0] + dr
+	nc = posdir[0][1] + dc
 
 	if  0 <= nr < rows and 0 <= nc < cols:
-		if M[nr][pos[1] + dc] == '.':
-			N.append(((nr,nc),d))
-		if M[nr][pos[1] + dc] == '|':	
+		if M[nr][nc] == '.':
+			nd = d
+		elif M[nr][nc] == '|':	
 			if d == 's' or d == 'n':
-				N.append(((nr,nc),d))
-			if d == 'e' or d == 'w':
+				nd = d
+			elif d == 'e' or d == 'w':
 				N.append(((nr,nc),'n'))
-				N.append(((nr,nc),'s'))
+				nd = 's'
 
-		if M[nr][pos[1] + dc] == '-':	
+		elif M[nr][nc] == '-':	
 			if d == 'e' or d == 'w': 
-				N.append(((nr,nc),d))
-			if d == 'n' or d == 's':
+				nd = d
+			elif d == 'n' or d == 's':
 				N.append(((nr,nc),'e'))
-				N.append(((nr,nc),'w'))
+				nd = 'w'
 
-		if M[nr][pos[1] + dc] == '\\':	
-			if d == 'e': N.append(((nr,nc),'s'))
-			if d == 'w': N.append(((nr,nc),'n'))
-			if d == 'n': N.append(((nr,nc),'w'))
-			if d == 's': N.append(((nr,nc),'e'))
-
-		if M[nr][pos[1] + dc] == '/':
-			if d == 'e': N.append(((nr,nc),'n'))
-			if d == 'w': N.append(((nr,nc),'s'))
-			if d == 'n': N.append(((nr,nc),'e'))
-			if d == 's': N.append(((nr,nc),'w'))	
+		elif M[nr][nc] == '\\':	
+			if d == 'e': nd = 's'
+			elif d == 'w': nd = 'n'
+			elif d == 'n': nd = 'w'
+			elif d == 's': nd = 'e'
+			N.append(((nr,nc),nd))
+		elif M[nr][nc] == '/':
+			if d == 'e': nd = 'n'
+			elif d == 'w': nd = 's'
+			elif d == 'n': nd = 'e'
+			elif d == 's': nd = 'w'	
+		N.append(((nr,nc),nd))
 	return N
 		
-M = [i.strip() for i in open('t.in')]
+M = [i.strip() for i in open('16.in')]
 
 for l in range(len(M)):
 	M[l] = list(M[l])
@@ -55,8 +55,8 @@ cols = len(M[0])
 record = []
 
 # part 1
-hist = [((0, -1), 'e')]				
-curr = [((0, -1), 'e')]
+#hist = [((0, -1), 'e')]				
+#curr = [((0, -1), 'e')]
 
 
 # part 2
