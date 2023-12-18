@@ -4,7 +4,7 @@ def f(line):
     P, N = line.split()
     P, N = (P+'?') * 5, eval(N) * 5
     #P, N = (P) , eval(N)
-    print(P,N)
+    
 
     @cache
     def dp(p, n, r=0):

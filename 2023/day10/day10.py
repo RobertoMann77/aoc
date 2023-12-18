@@ -4,15 +4,6 @@ for l in range(len(M)): M[l] = list(M[l])
 def det(a,b): 
 	return(a[0] * b[1] - a[1] * b[0])
 
-def print_grid(R):
-	for s in range(len(R)):
-		l = ''
-		for t in range(len(R[0])):
-			if (s,t) in trace:	l += 'o'
-			elif (s,t)	in found:   l += 'I'
-			if (s,t) not in trace and (s,t) not in found: l += M[s][t]
-		print(l)
-
 rows = len(M)
 col = len(M[0])
 
