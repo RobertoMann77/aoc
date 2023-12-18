@@ -1,7 +1,8 @@
-#input: https://adventofcode.com/2023/day/10
-
 M = [i.strip() for i in open('10.in')]
 for l in range(len(M)): M[l] = list(M[l])
+
+def det(a,b): 
+	return(a[0] * b[1] - a[1] * b[0])
 
 def print_grid(R):
 	for s in range(len(R)):
@@ -20,6 +21,8 @@ for i,s in enumerate(M):
 		for j,t in enumerate(s):
 			if t == 'S': S = (i,j)
 
+path = [S]
+border = 0
 def go(z):
 	pos = z[0]
 	di = z[1]
@@ -30,97 +33,76 @@ def go(z):
 		if di == 'l':
 			x = -1
 			d = 'l'
-		if di == 'r': 
+		elif di == 'r': 
 			x = 1
 			d = 'r'
 	elif m == '|':
 		if di == 'u': 
 			y = -1
 			d = 'u'
-		if di == 'd': 
+		elif di == 'd': 
 			y = 1
 			d = 'd'
 	elif m == 'F':
+		path.append(pos)
 		if di == 'u': 
 			x = 1
 			d = 'r'
-		if di == 'l': 
+		elif di == 'l': 
 			y = 1
 			d = 'd'
 	elif m == 'J':
+		path.append(pos)
 		if di == 'd': 
 			x = -1
 			d = 'l'
-		if di == 'r': 
+		elif di == 'r': 
 			y = -1
 			d = 'u'
 	elif m == 'L':
+		path.append(pos)
 		if di == 'd': 
 			x = 1
 			d = 'r'
-		if di == 'l': 
+		elif di == 'l': 
 			y = -1
 			d = 'u'
 	elif m == '7':
+		path.append(pos)
 		if di == 'r': 
 			y = 1
 			d = 'd'
-		if di == 'u': 
+		elif di == 'u': 
 			x = -1
 			d = 'l'
 	return ((pos[0]+y,pos[1]+x),d)	# from z to next pos
 
-if rows > 30: M[S[0]][S[1]] = '-'	# 10.in
-else: M[S[0]][S[1]] = 'F'				# t.in
+if rows > 30: 
+	M[S[0]][S[1]] = '-'		# 10.in
+	old = (S,'r')
+else: 
+	M[S[0]][S[1]] = 'F'		# t.in
+	old = (S,'u')
 
-# find way
-old = (S,'r')			# direction must be entered
 new = ((0,0),'l')		# because of while loop
 count = 0
 trace = []				
-while new[0] != S:	# find a way on round
+while new[0] != S:		# find a way on round
+	border += 1
 	new = (go(old))
 	old = new
 	count += 1
 	trace.append(new[0])
 print('Answer 1:',count//2)	# find halfway
 
-empty = []		# all pos not on trace
+empty = []				# all pos not on trace
 for s in range(len(M)):
 		for t in range(len(M[0])): 
 			if (s,t) not in trace : empty.append((s,t))
 
-sum1 = 0
-for test in empty:
-	r = test[0]
-	c = test[1]
-	count = 0
-	
-	fc = 0 	# counter for F
-	lc = 0 	# counter for L
-	way = ''
-	for i in range(c+1,col):	# count pipes on trace from pos to right boarder
-		way += M[r][i]
-		if M[r][i] == '|' and (r,i) in trace: count += 1
-		if M[r][i] == 'J' and (r,i) in trace:					# taking care of edges in pipe
-			if fc == 1:
-				count += 1
-				fc = 0
-			if lc == 1:
-				lc = 0
-		if M[r][i] == '7' and (r,i) in trace:
-			if lc == 1:
-				count += 1
-				lc = 0
-			if fc == 1:
-				fc = 0
-		if M[r][i] == 'F' and (r,i) in trace: fc = 1
-		if M[r][i] == 'L' and (r,i) in trace: lc = 1
-	if count % 2 == 1:
-		sum1 += 1
-	#print(test,way,count_right)
-print('Answer 2:',sum1)
-
-
-
+path.append(S)
+sum2 = 0
+for (p1,p2) in list(zip(path, path[1:])):
+	sum2 += det(p1, p2)
+print('Answer 2:', int(abs(sum2/2) - border/2 + 1))
 
