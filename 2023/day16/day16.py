@@ -56,27 +56,17 @@ def count_tiles(start):
 
 	return len(tiles)
 
-M = open('16.in').read().splitlines()
-
+M = open('t.in').read().splitlines()
 rows = len(M)
 cols = len(M[0])
 
 print('Answer 1:',count_tiles((0, -1, 0, 1)))
 
-
 record = []
-
-for c in range(cols):
-	record.append(count_tiles((-1, c, 1,0)))
-
-for c in range(cols):
-	record.append(count_tiles((rows, c, -1,0)))
-
-for r in range(cols):
-	record.append(count_tiles((r, -1, 0,1)))
-
-for r in range(cols):
-	record.append(count_tiles((r, rows, 0,-1)))
+for c in range(cols): record.append(count_tiles((-1, c, 1,0)))
+for c in range(cols): record.append(count_tiles((rows, c, -1,0)))
+for r in range(cols): record.append(count_tiles((r, -1, 0,1)))
+for r in range(cols): record.append(count_tiles((r, rows, 0,-1)))
 	
 print('Answer 2:',max(record))
 
