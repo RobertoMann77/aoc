@@ -1,6 +1,6 @@
 # input: https://adventofcode.com/2015/day/2
 
-data = [i.strip() for i in open('day2.in')]
+data = [i.strip() for i in open('2.in')]
 a = 0  #paper
 r = 0  #ribbon
 for x in data:

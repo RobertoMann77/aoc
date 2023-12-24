@@ -1,4 +1,4 @@
-data = [i.strip() for i in open('day06.in')]
+data = [i.strip() for i in open('6.in')]
     
 mapsize=1000
 

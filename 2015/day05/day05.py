@@ -1,4 +1,4 @@
-data = [i.strip() for i in open('day05.in')]
+data = [i.strip() for i in open('5.in')]
 
 vowels='aeiou'
 combos=['ab','cd','pq','xy']

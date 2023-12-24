@@ -5,6 +5,7 @@ xmax = 0
 ymax = 0
 zmax = 0
 
+
 bricks = []
 for line in data:
 	A, B = line.split('~')

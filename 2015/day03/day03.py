@@ -1,6 +1,6 @@
 # input: https://adventofcode.com/2015/day/3
 
-data = open('day3.in').read().strip()
+data = open('3.in').read().strip()
 
 h = [(0,0)]
 

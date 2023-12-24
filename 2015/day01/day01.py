@@ -1,6 +1,6 @@
 # input: https://adventofcode.com/2015/day/1
 
-data = open("day1.in").read()
+data = open("1.in").read()
 
 print('Answer 1:',data.count('(') - data.count(')'))
 
