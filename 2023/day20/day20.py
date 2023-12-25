@@ -2,8 +2,7 @@ data = [i.strip() for i in open('20.in')]
 
 switch = {'lo': 'hi', 'hi': 'lo'}
 
-
-
+# modules which deliver to rx
 watch = {}
 watch['kk'] = []
 watch['vt'] = []
@@ -12,6 +11,15 @@ watch['xc'] = []
 
 # processes the signal input of a modul and push to destinaton modules
 def compute(signal,modul):
+	if signal == 'lo':
+		if modul == 'kk':
+			watch['kk'].append(i)
+		if modul == 'vt':
+			watch['vt'].append(i)
+		if modul == 'sk':
+			watch['sk'].append(i)
+		if modul == 'xc':
+			watch['xc'].append(i)
 
 	if comp[modul][0] == '%':
 		if signal == 'lo':
@@ -40,17 +48,6 @@ def compute(signal,modul):
 		comp[modul][1] = signal
 		return 'nothing'
 
-	if comp[modul][1] == 'lo':
-		if modul == 'kk':
-			watch['kk'].append((i,signal))
-		if modul == 'vt':
-			watch['vt'].append((i,signal))
-		if modul == 'sk':
-			watch['sk'].append((i,signal))
-		if modul == 'xc':
-			watch['xc'].append((i,signal))
-
-
 comp = {}
 for line in data:
 	a,b = line.split(' -> ')
@@ -62,10 +59,8 @@ for line in data:
 		elif a[0] == '&':
 			comp[a[1:]] = ['&', 'lo', b.split(', '),[]]
 
-# 
 comp['output'] = ['§', 'lo',[]]
 comp['rx'] = ['§', 'lo',[]]
-
 
 # find out if & modul has one or more inputs
 conj = {}
@@ -79,13 +74,7 @@ lo_count = 0
 hi_count = 0
 rx_states = []
 
-
-
-for i in range(1000000):
-	if i%100000 == 0:
-		for tt in watch:
-			print(tt,watch[tt][-5:])
-		print()
+for i in range(6000):
 	lo_count += 1 # for broadcast push
 	todo = []
 	for j in bc:
@@ -109,7 +98,13 @@ for i in range(1000000):
 				todo.append(test)
 	if i == 999:
 		print('Answer 1:', lo_count * hi_count)
-print()
+
+prod = 1
+
+for w in watch:
+	prod *= watch[w][0] + 1
+
+print('Answer 2:', prod)
 
 
 

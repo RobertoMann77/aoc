@@ -1,4 +1,5 @@
 import numpy as np
+from z3 import *
 
 data = [i.strip() for i in open('24.in')]
 hail = []
@@ -22,8 +23,7 @@ else:
 
 count = 0
 for i in range(len(hail) - 1):
-	for j in range(i + 1, len(hail)):
-		
+	for j in range(i + 1, len(hail)):	
 		R = hail[i]
 		S = hail[j]
 
@@ -38,5 +38,5 @@ for i in range(len(hail) - 1):
 				if x[0] * R[2][0] + R[2][1] >= 0 and x[0] * S[2][0] + S[2][1] >= 0:
 					count += 1
 			
-print(count)
+print('Answer 1:', count)
 

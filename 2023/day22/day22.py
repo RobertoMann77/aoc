@@ -5,7 +5,6 @@ xmax = 0
 ymax = 0
 zmax = 0
 
-
 bricks = []
 for line in data:
 	A, B = line.split('~')
@@ -23,7 +22,6 @@ for line in data:
 	if max(ay, by) > ymax: ymax = max(ay, by)
 	if max(az, bz) > zmax: zmax = max(az, bz)
 
-
 M = []
 for x in range(xmax + 1):
 	s = []
@@ -39,20 +37,8 @@ M = np.array(M)
 bricks = []
 
 for l,line in enumerate(data):
-	A, B = line.split('~')
-	ax, ay, az = A.split(',')
-	bx, by, bz = B.split(',')
-	ax = int(ax)
-	ay = int(ay)
-	az = int(az)
-
-	bx = int(bx)
-	by = int(by)
-	bz = int(bz)
-
-	A = (ax, ay, az)
-	B = (bx, by, bz)
-	bricks.append(((ax, ay, az), (bx, by, bz)))
+	ax, ay, az ,bx ,by, bz = list(map(int, line.replace('~', ',').split(',')))
+	bricks.append((ax, ay, az, bx, by, bz))
 
 	if ax != bx:
 		for x in range(min(ax, bx), max(ax, bx) + 1):
@@ -64,16 +50,5 @@ for l,line in enumerate(data):
 		for z in range(min(az, bz), max(az, bz) + 1):
 			M[ax][ay][z] = chr(ord('A') + l)
 
-for b,brick in enumerate(bricks):
-	ax, ay, az = brick[0]
-	bx, by, bz = brick[1]
-	if ax != bx:
-		u = []
-		d = []
-		for x in range(min(ax, bx), max(ax, bx) + 1):
-			continue
-
-
-	
 print()
 print(M)
