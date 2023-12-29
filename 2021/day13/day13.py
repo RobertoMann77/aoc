@@ -25,7 +25,6 @@ for f in folds:
 	part = f.split()
 	fold.append((part[2][0], int(part[2][2:])))
 
-pp()
 for i,f in enumerate(fold):
 	new = set()
 	if f[0] == 'x':
