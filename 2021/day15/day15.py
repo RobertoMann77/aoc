@@ -1,16 +1,28 @@
+import numpy as np
 data = [i.strip() for i in open('t.in')]
 
-C = complex
+def look(pos):
+	togo = []
+	dr = [ 0,  0, -1,  1]
+	dc = [-1,  1,  0,  0]
+	for n in range(4):
+		r = pos[0] + dr[n]
+		c = pos[1] + dc[n]
+		if 0 <= r < len(M) and 0 <= c < len(M[0]):
+			togo.append((r,c))
 
-RL = {}
-for r,line in enumerate(data):
-	for c, rl in enumerate(line):
-		RL[C(r,c)] = (int(rl),0)
+M = []
+visited = {(0,0) : 0}
+for row in data:
+	r = []
+	for char in row:
+		r.append(int(char))
+	M.append(r)
 
-print(RL)
+M = np.array(M)
+print(M)
 
-curr = [(0,0)]
+	   #rl  r  c
+curr = [(0, 0, 0)]
 
-while curr:
-	d = [C(0,1), C(1,0), C(0,-1), C(-1,0)]
-	pos = curr.pop(0)
+visited = set()
