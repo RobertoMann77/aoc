@@ -31,4 +31,3 @@ while n < len(instr):
 	
 
 print('Answer 1:',reg['a'])
-print('10'.isnumeric())
