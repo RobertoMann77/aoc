@@ -2,10 +2,8 @@ import numpy as np
 import sympy
 #from z3 import *
 
-
-data = [i.strip() for i in open('24.in')]
+data = [i.strip() for i in open('t.in')]
 hail = []
-
 target = []
 
 for line in data:
@@ -18,7 +16,6 @@ for line in data:
 	t = [1 / vel[0], -pos[0] / vel[0]]
 	hail.append([gl, erg, t])
 
-
 if len(data) > 20:
 	testmin = 200000000000000
 	testmax = 400000000000000
@@ -28,13 +25,12 @@ else:
 
 count = 0
 for i in range(len(hail) - 1):
-	for j in range(i + 1, len(hail)):	
+	for j in range(i + 1, len(hail)):
 		R = hail[i]
 		S = hail[j]
-
 		A = np.array([R[0], S[0]])
 		b = np.array([R[1], S[1]])
-		try: 								
+		try:
 			x = np.linalg.solve(A, b)	# error when parallel
 		except:
 			continue
@@ -64,8 +60,6 @@ for i, (sx, sy, sz, vx, vy, vz) in enumerate(target):
 	if i == 2:
 		answers = [soln for soln in sympy.solve(equat) if all(x % 1 == 0 for x in soln.values())]
 		break
-
-
 
 print('Answer 2:', answers[0][xr] + answers[0][yr] + answers[0][zr])
 

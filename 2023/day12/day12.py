@@ -27,7 +27,6 @@ def calc(record,groups):
 	print(record,groups,'  :  ',out)
 	return out
 
-
 data = [i.strip() for i in open('t.in')]
 for line in data:
  	record, raw_groups = line.split()

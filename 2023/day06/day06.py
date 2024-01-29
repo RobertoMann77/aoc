@@ -24,3 +24,4 @@ r = math.sqrt(t*t/4-d)
 a = t/2 + r
 b = t/2 - r
 print('Answer 2:', int((a - b)//1))
+

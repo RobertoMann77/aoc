@@ -1,4 +1,4 @@
-data = open('12.in').read().strip().replace('\n','')
+data = open('t.in').read().strip().replace('\n','')
 
 def counter(list):
    sum = 0
