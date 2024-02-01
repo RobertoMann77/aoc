@@ -1,4 +1,4 @@
-data = [i.strip() for i in open('15.in')]
+data = [i.strip() for i in open('t.in')]
 
 def test(n):
 	found = 0

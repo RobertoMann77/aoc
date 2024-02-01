@@ -1,6 +1,5 @@
 data=open('t.in').read().split('\n')
 
-#create map
 R = len(data)
 C = len(data[0])
 map=[]
@@ -29,10 +28,12 @@ count=0
 while E not in now:
     r = now.pop(0)    
     for n in range(4):
-        if 0 <= (r[0] + dr[n]) < R and 0 <= (r[1] +dc[n]) < C:
-            if ord(map[r[0]+dr[n]][r[1]+dc[n]]) - ord(map[r[0]][r[1]]) < 2:
-                if (r[0]+dr[n],r[1]+dc[n]) not in visited:
-                    now.append((r[0]+dr[n],r[1]+dc[n]))
-                visited.append((r[0]+dr[n],r[1]+dc[n]))
+        nr = r[0] + dr[n]
+        nc = r[1] + dc[n]
+        if 0 <= nr < R and 0 <= nc < C:
+            if ord(map[nr][nc]) - ord(map[r[0]][r[1]]) < 2:
+                if (nr,nc) not in visited:
+                    now.append((nr,nc))
+                visited.append((nr,nc))
     count+=1
 print('Answer 1: ',count)

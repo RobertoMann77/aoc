@@ -7,7 +7,9 @@ def valnum(k):
   r = ''
   for i in k:
     if i.isdigit():  r += i
-  return int(r[0] + r[-1])
+  if len(r):
+      return int(r[0] + r[-1])
+  return 0
 
 sum1 = 0
 sum2 = 0
