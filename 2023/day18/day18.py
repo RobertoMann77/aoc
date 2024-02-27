@@ -1,5 +1,5 @@
 import numpy as np
-data = [i.strip() for i in open('18.in')]
+data = [i.strip() for i in open('t.in')]
 
 def det(a,b): 
 	return(a[0] * b[1] - a[1] * b[0])

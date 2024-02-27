@@ -14,7 +14,7 @@ def printmap():
         print(line)
     print(Fore.WHITE)    
 
-#create map
+#create mapx
 xmax=len(data)
 ymax=len(data[0])
 map=[]

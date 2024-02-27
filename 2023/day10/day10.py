@@ -1,4 +1,4 @@
-M = [i.strip() for i in open('10.in')]
+M = [i.strip() for i in open('t.in')]
 for l in range(len(M)): M[l] = list(M[l])
 
 def det(a,b): 
