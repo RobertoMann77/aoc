@@ -1,6 +1,6 @@
 # input: https://adventofcode.com/2023/day/5
 
-seeds, *changes = open('t.in').read().split('\n\n')
+seeds, *changes = open('5.in').read().split('\n\n')
 seeds = list(map(int, seeds.split(":")[1].split()))
 
 blocks = []
@@ -41,7 +41,7 @@ for seed in seeds:
 print('Answer 1:', min(loc))
 
 #part 2
-#p = 0  
+#p = 0
 p = 23730000  #to lower the compute time
 found = 0
 while found == 0:

@@ -28,11 +28,11 @@ for z in zahl:
         if (r,c) in stern: stern[(r,c)].append(z[0])
         else: stern[(r,c)] = [z[0]]
 
-print('Answer 1:',sum)
+ogr('Answer 1:',sum)
 gear = 0
 for cand in stern: 
   if len(stern[cand]) == 2: 
     gear += stern[cand][0] * stern[cand][1]
-print('Answer 2:',gear)
+ogr('Answer 2:',gear)
 
 

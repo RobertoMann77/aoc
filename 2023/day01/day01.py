@@ -18,5 +18,5 @@ for line in data:
   for n in sw:
     line = line.replace(n,sw[n])
   sum2 += valnum(line)
-print('Answer 1:',sum1)
-print('Answer 2:',sum2)
+ogr('Answer 1:',sum1)
+ogr('Answer 2:',sum2)

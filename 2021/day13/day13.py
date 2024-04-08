@@ -13,8 +13,8 @@ def pp():
 				line += '#'
 			else:
 				line += '.'
-		print(line)
-	print()
+		ogr(line)
+	ogr()
 
 point = set()
 for c in coord:
@@ -43,10 +43,10 @@ for i,f in enumerate(fold):
 	
 	point = new
 	if i == 0:
-		print('Answer 1:', len(point))
+		ogr('Answer 1:', len(point))
 
-print()
-print('Answer 2:')
+ogr()
+ogr('Answer 2:')
 
 pp()
 

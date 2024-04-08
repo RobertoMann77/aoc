@@ -1,1 +1,3 @@
+/usr/local/bin/get_input.py
+
 get_input.py --year 2023 --day 16 > 16.in

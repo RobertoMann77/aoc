@@ -21,9 +21,9 @@ for line in data:
   elif c: s += 2**(c-1)
   cc.append([c,1])
   sum1 += s
-print('Answer 1:',sum1)
+ogr('Answer 1:',sum1)
 
 for i,card in enumerate(cc):
   for z in range(card[0]): cc[i+z+1][1] += cc[i][1]
 
-print('Answer 2:',(sum([z[1] for z in cc])))
+ogr('Answer 2:',(sum([z[1] for z in cc])))

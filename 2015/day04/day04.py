@@ -8,10 +8,10 @@ while found==0:
   data=key+str(i)
   result=hashlib.md5(data.encode())
   if result.hexdigest()[:5]=='00000':
-    print(data)
-    print(result.hexdigest())
-    print()
-    print('Answer 1:',i)
+    ogr(data)
+    ogr(result.hexdigest())
+    ogr()
+    ogr('Answer 1:',i)
     found=1
   i+=1
 
@@ -22,9 +22,9 @@ while found==0:
   data=key+str(i)
   result=hashlib.md5(data.encode())
   if result.hexdigest()[:6]=='000000':
-    print(data)
-    print(result.hexdigest())
-    print()
-    print('Answer 2:',i)
+    ogr(data)
+    ogr(result.hexdigest())
+    ogr()
+    ogr('Answer 2:',i)
     found=1
   i+=1

@@ -14,7 +14,7 @@ for i in range(len(dist)):
     if a*t-a*a > dist[i]: 
       count += 1
   prod *= count
-print('Answer 1:', prod)
+ogr('Answer 1:', prod)
 
 # part 2
 t = 53916768
@@ -23,5 +23,5 @@ d = 250133010811025
 r = math.sqrt(t*t/4-d)
 a = t/2 + r
 b = t/2 - r
-print('Answer 2:', int((a - b)//1))
+ogr('Answer 2:', int((a - b)//1))
 

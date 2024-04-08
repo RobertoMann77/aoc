@@ -47,5 +47,5 @@ for item in data:
   if rule4==1 and rule5==1: 
     nicecount2+=1
   
-print('Answer 1:',nicecount1)
-print('Answer 2:',nicecount2)
+ogr('Answer 1:',nicecount1)
+ogr('Answer 2:',nicecount2)

@@ -25,6 +25,6 @@ for k in range(rounds):
     new.append(hist[-1][pos-1])
   hist.append(new)
 
-print('Answer:', len(hist[-1]))
+ogr('Answer:', len(hist[-1]))
 
 

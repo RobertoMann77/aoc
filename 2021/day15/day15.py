@@ -20,7 +20,7 @@ for row in data:
 	M.append(r)
 
 M = np.array(M)
-print(M)
+ogr(M)
 
 	   #rl  r  c
 curr = [(0, 0, 0)]

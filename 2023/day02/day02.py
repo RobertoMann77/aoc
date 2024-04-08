@@ -20,7 +20,7 @@ for line in data:
       if farbe == 'blue' and int(anz) > b : b = int(anz)
   if r < 13 and g < 14 and b < 15: sum1 += id
   sum2 += r*g*b
-print('Answer 1:',sum1)
-print('Answer 2:',sum2)
+ogr('Answer 1:',sum1)
+ogr('Answer 2:',sum2)
 
     

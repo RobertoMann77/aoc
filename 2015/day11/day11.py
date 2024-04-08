@@ -26,9 +26,9 @@ def step(z,n):
 
 while check(p) == False: p = step(p,7)
 
-print('Answer 1:',p)
+ogr('Answer 1:',p)
 
 p = step(p,7)
 while check(p) == False: p = step(p,7)
 
-print('Answer 2:',p)
+ogr('Answer 2:',p)

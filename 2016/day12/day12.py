@@ -30,4 +30,4 @@ while n < len(instr):
 	n += 1
 	
 
-print('Answer 1:',reg['a'])
+ogr('Answer 1:',reg['a'])

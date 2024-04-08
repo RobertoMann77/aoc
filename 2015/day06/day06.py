@@ -42,5 +42,5 @@ for i in range(mapsize):
   for j in range(mapsize):  
     lightcount2+=map2[i][j]
 
-print('Answer 1: ',lightcount1)
-print('Answer 2: ',lightcount2)
+ogr('Answer 1: ',lightcount1)
+ogr('Answer 2: ',lightcount2)

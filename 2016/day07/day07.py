@@ -32,8 +32,8 @@ for l,line in enumerate(data):
 			c2 += 1
 			break
 
-print('Answer 1:', c1)
-print('Answer 2:', c2)
+ogr('Answer 1:', c1)
+ogr('Answer 2:', c2)
 
 
 
