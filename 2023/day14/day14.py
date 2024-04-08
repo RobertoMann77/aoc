@@ -7,7 +7,7 @@ def pr_gr(R):
 		l = ''
 		for t in s:
 			l += t
-		print(l)
+		j(l)
 
 def find_rr(m):
 	rr = []
@@ -66,18 +66,18 @@ z = 100311
 for r in range(len(history[z])-1):
 	for s in range(r+1,len(history[z])):
 		if np.array_equal(history[z][r][2],history[z][s][2]):
-			print()
-			print('found:',history[z][r][0],history[z][s][0])
+			j()
+			j('found:',history[z][r][0],history[z][s][0])
 			d = history[z][s][0]-history[z][r][0]
 			marker = history[z][r][0]
-			print('d:',d)
-			print('look at:',(1000000000 - history[z][r][0])%d)
+			j('d:',d)
+			j('look at:',(1000000000 - history[z][r][0])%d)
 			pr_gr(history[z][r][2])
-			print()
+			j()
 			pr_gr(history[z][s][2])
 
 
-print('Answer 2:',summen[marker+(1000000000 - marker)%d])
+j('Answer 2:',summen[marker+(1000000000 - marker)%d])
 #print((1000000000 - 141)%52)
 
 

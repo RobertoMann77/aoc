@@ -25,7 +25,7 @@ def print_grid(R,w):
 				l += 'O'
 			else:
 				l += t
-		print(l)
+		j(l)
 
 M = [i.strip() for i in open('t.in')]
 
@@ -42,8 +42,8 @@ for c, zeichen in enumerate(M[0]):
 for c, zeichen in enumerate(M[-1]):
 	if zeichen == '.':
 		E = (rows - 1,c)
-print('start:', S, 'end:', E)
-print()
+j('start:', S, 'end:', E)
+j()
 ways = []
 ways.append([S])
 to_kill = []
@@ -51,14 +51,14 @@ to_kill = []
 erg = []
 found = 1
 cross = set()
-print('crossings:')
+j('crossings:')
 for r in range(rows):
 	for c in range(cols):
 		if M[r][c] != '#' and len(look((r,c))) > 2:
 			cross.add((r,c))
 
-print(cross)
-print()
+j(cross)
+j()
 
 while found == 1:
 	newways = []
@@ -77,7 +77,7 @@ while found == 1:
 
 		if way[-1] == E:
 			erg.append(len(way) - 1)
-			print(max(erg))
+			j(max(erg))
 			to_kill.append(w)
 
 		if found == 0:
@@ -96,7 +96,7 @@ while found == 1:
 	while to_kill:
 		ways.pop(to_kill.pop(-1))
 
-print('Answer 1:', max(erg))
+j('Answer 1:', max(erg))
 
 
 

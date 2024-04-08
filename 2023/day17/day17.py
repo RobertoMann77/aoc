@@ -15,7 +15,7 @@ while curr:
 	hl, r, c, dr, dc, n = heappop(curr)
 	
 	if r == R-1 and c == C-1:
-		print('Answer 1:', hl)
+		j('Answer 1:', hl)
 		break
 		
 	if (r, c, dr, dc, n) in visited: 
@@ -44,7 +44,7 @@ while curr:
 	hl, r, c, dr, dc, n = heappop(curr)
 	
 	if r == R-1 and c == C-1 and n >= 4:
-		print('Answer 2:', hl)
+		j('Answer 2:', hl)
 		break
 		
 	if (r, c, dr, dc, n) in visited: 

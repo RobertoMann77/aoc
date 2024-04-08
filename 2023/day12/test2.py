@@ -43,4 +43,4 @@ total = 0
 for pattern, counts in records:
     total += calculate_arrangements(pattern, counts)
 
-print(total)
+j(total)

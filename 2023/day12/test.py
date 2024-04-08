@@ -22,4 +22,4 @@ def f(line):
 
     return dp(0, 0)
 
-print(sum(map(f, open('t.in'))))
+j(sum(map(f, open('t.in'))))

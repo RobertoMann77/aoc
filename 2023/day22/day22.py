@@ -50,5 +50,5 @@ for l,line in enumerate(data):
 		for z in range(min(az, bz), max(az, bz) + 1):
 			M[ax][ay][z] = chr(ord('A') + l)
 
-print()
-print(M)
+j()
+j(M)

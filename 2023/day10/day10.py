@@ -84,7 +84,7 @@ while new[0] != S:		# find a way on round
 	old = new
 	count += 1
 	trace.append(new[0])
-print('Answer 1:',count//2)	# find halfway
+j('Answer 1:',count//2)	# find halfway
 
 empty = []				# all pos not on trace
 for s in range(len(M)):
@@ -95,5 +95,5 @@ path.append(S)
 sum2 = 0
 for (p1,p2) in list(zip(path, path[1:])):
 	sum2 += det(p1, p2)
-print('Answer 2:', int(abs(sum2/2) - border/2 + 1))
+j('Answer 2:', int(abs(sum2/2) - border/2 + 1))
 

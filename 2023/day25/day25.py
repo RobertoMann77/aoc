@@ -27,5 +27,5 @@ for x in [list(E.keys())[0]]:
     if x!=y:
       cut_value, (L,R) = nx.minimum_cut(G, x, y)
       if cut_value == 3:
-        print(len(L)*len(R))
+        j(len(L)*len(R))
         break

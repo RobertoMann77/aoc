@@ -44,7 +44,7 @@ def print_grid(R):
 		l = ''
 		for t in s:
 			l += t
-		print(l)
+		j(l)
 
 M = [i.strip() for i in open('t.in')]
 
@@ -70,7 +70,7 @@ for r in range(rows):
 
 for r in range()
 
-print(M)
+j(M)
 
 rows = len(M)
 cols = len(M[0])
@@ -87,4 +87,4 @@ for step in range(100):
 	
 
 # why plus 1 ???
-print(len(curr)+1)
+j(len(curr)+1)

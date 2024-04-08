@@ -63,8 +63,8 @@ for m in M:
 			count1 += i * 100
 	sum1 += count1
 	sum2 += count2
-print('Answer 1:',sum1)
-print('Answer 2:',sum2)
+j('Answer 1:',sum1)
+j('Answer 2:',sum2)
 
 
 	

@@ -48,5 +48,5 @@ sum1 = 0
 sum2 = 0
 for r in dist1: sum1 += dist1[r]
 for r in dist2: sum2 += dist2[r]
-print('Answer 1:',sum1)
-print('Answer 2:',sum2)
+j('Answer 1:',sum1)
+j('Answer 2:',sum2)

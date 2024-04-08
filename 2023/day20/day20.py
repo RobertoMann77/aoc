@@ -86,7 +86,7 @@ for i in range(6000):
 		t = todo.pop(0)
 		for y in t[1]:
 			if y == 'rx' and comp[t[0]][1] == 'lo':
-				print('Answer 2:', i)
+				j('Answer 2:', i)
 				break
 				
 			if comp[t[0]][1] == 'lo':
@@ -97,14 +97,14 @@ for i in range(6000):
 			if test != 'nothing':
 				todo.append(test)
 	if i == 999:
-		print('Answer 1:', lo_count * hi_count)
+		j('Answer 1:', lo_count * hi_count)
 
 prod = 1
 
 for w in watch:
 	prod *= watch[w][0] + 1
 
-print('Answer 2:', prod)
+j('Answer 2:', prod)
 
 
 

@@ -21,7 +21,7 @@ for line in data:
 sum1 = 0
 for (p1,p2) in list(zip(pos, pos[1:])):
 	sum1 += det(p1, p2)
-print('Answer 1:', int(abs(sum1/2) + border/2 + 1))
+j('Answer 1:', int(abs(sum1/2) + border/2 + 1))
 
 
 # part 2
@@ -43,7 +43,7 @@ for line in data:
 sum2 = 0
 for (p1,p2) in list(zip(pos, pos[1:])):
 	sum2 += det(p1, p2)
-print('Answer 2:', int(abs(sum2/2) + border/2 + 1))
+j('Answer 2:', int(abs(sum2/2) + border/2 + 1))
 
 
 

@@ -24,7 +24,7 @@ def calc(record,groups):
 		out = dot() + pound()
 	else:
 		raise RuntimeError
-	print(record,groups,'  :  ',out)
+	j(record,groups,'  :  ',out)
 	return out
 
 data = [i.strip() for i in open('t.in')]
@@ -32,6 +32,6 @@ for line in data:
  	record, raw_groups = line.split()
  	groups = [int(i) for i in raw_groups.split(',')]
  	sum1 += calc(record,tuple(groups))
- 	print(10*'-')
+ 	j(10*'-')
 
-print('Answer 1:',sum1)
+j('Answer 1:',sum1)

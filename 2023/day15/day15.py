@@ -11,7 +11,7 @@ for line in data:
 	cv = 0
 	for buchst in line: cv = doit(buchst,cv)
 	sum1 += cv
-print('Answer 1:',sum1)
+j('Answer 1:',sum1)
 
 len_fl = {}
 boxes = {}
@@ -54,5 +54,5 @@ for b,box in enumerate(boxes):
 	for l,lens in enumerate(boxes[box]):
 		if lens != '':
 			focus_power += int(lens[-1]) * (b+1) * (l+1)
-print('Answer 2:',focus_power)
+j('Answer 2:',focus_power)
 
