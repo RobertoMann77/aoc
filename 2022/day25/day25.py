@@ -35,10 +35,8 @@ z = ''
 for t in range(c):
     n = c - t - 1
     ans[t] = digit[(erg - calc(ans))//5**n]
-print(ans)
-print(calc(ans))
 
 g = ''
 for r in ans:
     g += r
-print(g)
+print('Answer: ', g)
