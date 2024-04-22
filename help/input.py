@@ -24,7 +24,7 @@ def ggT(n, m):
 
 # remove duplicate char in string
 from collections import OrderedDict
-def rem_dup(s):
+def rem_dup(s): 
     return ''.join(OrderedDict.fromkeys(s))
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
