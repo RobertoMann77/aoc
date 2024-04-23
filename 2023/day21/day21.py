@@ -66,12 +66,6 @@ for r in range(rows):
 			S = (r,c)
 			M[r][c] == '.'
 
- 
-
-for r in range()
-
-j(M)
-
 rows = len(M)
 cols = len(M[0])
 
@@ -87,4 +81,4 @@ for step in range(100):
 	
 
 # why plus 1 ???
-j(len(curr)+1)
+print('Answer 1:', len(curr)+1)

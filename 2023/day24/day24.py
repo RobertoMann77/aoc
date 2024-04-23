@@ -2,7 +2,7 @@ import numpy as np
 import sympy
 #from z3 import *
 
-data = [i.strip() for i in open('t.in')]
+data = [i.strip() for i in open('24.in')]
 hail = []
 target = []
 
@@ -39,7 +39,7 @@ for i in range(len(hail) - 1):
 				if x[0] * R[2][0] + R[2][1] >= 0 and x[0] * S[2][0] + S[2][1] >= 0:
 					count += 1
 
-j('Answer 1:', count)
+print('Answer 1:', count)
 
 # rock: 		pos_rock = (xr, yr, zr) 	vel_rock = (vxr, vyr, vzr)
 # hailstone: 	pos_hail = (sx, sy, sz)		vel_hail = (vx, vy, vz)
@@ -61,6 +61,4 @@ for i, (sx, sy, sz, vx, vy, vz) in enumerate(target):
 		answers = [soln for soln in sympy.solve(equat) if all(x % 1 == 0 for x in soln.values())]
 		break
 
-j('Answer 2:', answers[0][xr] + answers[0][yr] + answers[0][zr])
-
-
+print('Answer 2:', answers[0][xr] + answers[0][yr] + answers[0][zr])

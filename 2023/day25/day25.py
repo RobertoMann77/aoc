@@ -1,6 +1,7 @@
+from collections import defaultdict
+import networkx
 
-
-D = open('25.in').read().strip()
+D = open('t.in').read().strip()
 L = D.split('\n')
 G = [[c for c in row] for row in L]
 R = len(G)
@@ -27,5 +28,5 @@ for x in [list(E.keys())[0]]:
     if x!=y:
       cut_value, (L,R) = nx.minimum_cut(G, x, y)
       if cut_value == 3:
-        j(len(L)*len(R))
+        print('Answer 1:', len(L)*len(R))
         break

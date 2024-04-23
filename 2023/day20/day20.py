@@ -1,4 +1,4 @@
-data = [i.strip() for i in open('20.in')]
+data = [i.strip() for i in open('t.in')]
 
 switch = {'lo': 'hi', 'hi': 'lo'}
 
@@ -97,24 +97,11 @@ for i in range(6000):
 			if test != 'nothing':
 				todo.append(test)
 	if i == 999:
-		j('Answer 1:', lo_count * hi_count)
+		print('Answer 1:', lo_count * hi_count)
 
 prod = 1
 
 for w in watch:
 	prod *= watch[w][0] + 1
 
-j('Answer 2:', prod)
-
-
-
-
-
-
-
-
-
-
-
-
-
+print('Answer 2:', prod)

@@ -11,11 +11,11 @@ def test_rule(var, values):
 	return test_rule(go[var], values)
 
 def go_rev(link):
-	j(link,rev_tree[link])
+	print(link,rev_tree[link])
 	x = rev_tree[link]
 	a = rtree[link[1]]
 	if a == 'in' :
-		j((link[1],a),rev_tree[(link[1],a)])
+		((link[1],a),rev_tree[(link[1],a)])
 		return x
 	return x + ' ' + go_rev((link[1],a))
 	
@@ -43,7 +43,7 @@ for part in parts:
 
 	if test_rule('in', (x, m, a, s)) == 'A':
 		sum1 += x + m + a + s
-j('Answer 1:',sum1)
+print('Answer 1:',sum1)
 
 rev_tree = {}
 rtree = {}
@@ -54,7 +54,7 @@ for z in work:
 	bed = ''
 	for y in work[z]:
 		if (y[1],z) in rev_tree: 
-			j('ACHTUNG: old:', rev_tree[(y[1],z)],' new: ',bed + ' ' + y[0])
+			print('ACHTUNG: old:', rev_tree[(y[1],z)],' new: ',bed + ' ' + y[0])
 		rev_tree[(y[1],z)] = bed + ' ' + y[0]
 		rtree[y[1]] = z
 		bed += ' ' + 'n' + y[0]
@@ -62,7 +62,7 @@ for z in work:
 path = []
 for t in rev_tree:
 	if t[0] == 'A': 
-		j('-'*20)
+		print('-'*20)
 		ways.append(go_rev(t).replace('True',' ').split())
 
 sum2 = 0
@@ -71,8 +71,8 @@ for w in range(len(ways)):
 		ways[w].remove('True')
 
 for way in ways:
-	j()
-	j(way)
+	print()
+	print(way)
 	xmin = 0
 	xmax = 4001
 	mmin = 0
@@ -110,8 +110,8 @@ for way in ways:
 	
 	sum2 += (xmax - xmin - 1) * (mmax - mmin - 1) * (amax - amin - 1) * (smax - smin - 1)
 
-	j('xmin=',xmin,'xmax=',xmax,'mmin=',mmin,'mmax=',mmax,'amin=',amin,'amax=',amax,'smin=',smin,'smax=',smax)
+	print('xmin=',xmin,'xmax=',xmax,'mmin=',mmin,'mmax=',mmax,'amin=',amin,'amax=',amax,'smin=',smin,'smax=',smax)
 	
-j(sum2)
+print(sum2)
 
 

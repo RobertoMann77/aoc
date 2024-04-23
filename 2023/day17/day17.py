@@ -1,6 +1,6 @@
 from heapq import heappush, heappop
 
-M = open('17.in').read().splitlines()
+M = open('t.in').read().splitlines()
 
 
 R = len(M)
@@ -15,7 +15,7 @@ while curr:
 	hl, r, c, dr, dc, n = heappop(curr)
 	
 	if r == R-1 and c == C-1:
-		j('Answer 1:', hl)
+		print('Answer 1:', hl)
 		break
 		
 	if (r, c, dr, dc, n) in visited: 
@@ -44,7 +44,7 @@ while curr:
 	hl, r, c, dr, dc, n = heappop(curr)
 	
 	if r == R-1 and c == C-1 and n >= 4:
-		j('Answer 2:', hl)
+		print('Answer 2:', hl)
 		break
 		
 	if (r, c, dr, dc, n) in visited: 
