@@ -29,5 +29,4 @@ while n < len(instr):
 				n += int(instr[n][2]) - 1	
 	n += 1
 	
-
-ogr('Answer 1:',reg['a'])
+print('Answer 1:',reg['a'])

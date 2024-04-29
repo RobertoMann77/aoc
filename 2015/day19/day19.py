@@ -59,5 +59,3 @@ while mol:
         else:
             mol = copy.deepcopy(new)
             new = []
-                
-

@@ -22,5 +22,5 @@ for p in perm:
     d += M[(p[i],p[i+1])]
   dist.append(d)
     
-ogr(min(dist))
-ogr(max(dist))
+print(min(dist))
+print(max(dist))

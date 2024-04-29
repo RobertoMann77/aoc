@@ -15,7 +15,7 @@ for r in data:
   h.append((h[-1][0] + dx , h[-1][1] + dy))
 
 h = set(h)
-ogr('Answer 1:', len(h))
+print('Answer 1:', len(h))
 
 san = [(0,0)]
 rob = [(0,0)]
@@ -27,5 +27,5 @@ for r in range(0,len(data)-1,2):
   dy = go[data[r+1]][1]
   rob.append((rob[-1][0] + dx , rob[-1][1] + dy))
 h = set(rob + san)
-ogr('Answer 2:', len(h))
+print('Answer 2:', len(h))
 

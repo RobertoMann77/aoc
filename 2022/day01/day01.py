@@ -14,6 +14,6 @@ for item in data:
     
 bags.sort(reverse = True)
 
-ogr('Answer 1:',bags[0])
-ogr('Answer 2:',bags[0]+bags[1]+bags[2])
+print('Answer 1:',bags[0])
+print('Answer 2:',bags[0]+bags[1]+bags[2])
   

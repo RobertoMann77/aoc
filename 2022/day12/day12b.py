@@ -35,4 +35,4 @@ while E not in now:
                     now.append((r[0]+dx[n],r[1]+dy[n]))
                 visited.append((r[0]+dx[n],r[1]+dy[n]))
     count+=1
-ogr('Answer 1: ',count)
+print('Answer 1: ',count)

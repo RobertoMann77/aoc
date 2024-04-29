@@ -7,7 +7,7 @@ for line in data:
   new = line[1:-1]
   exec('r= "' + new + '"')
   mem += len(r)
-ogr('Answer 1:', code - mem)
+print('Answer 1:', code - mem)
 
 code = 0
 enc = 0
@@ -23,4 +23,4 @@ for line in data:
   new += "\\\"\""
   enc += len(new)
   
-ogr('Answer 2:',enc-code)
+print('Answer 2:',enc-code)

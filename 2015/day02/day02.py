@@ -17,7 +17,7 @@ for x in data:
   c.sort()
   r += 2*(c[0] + c[1]) + c[0]*c[1]*c[2]
   
-ogr('Answer 1:', a)
+print('Answer 1:', a)
 print('Answer 2:', r)
 
 

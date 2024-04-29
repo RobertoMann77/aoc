@@ -14,7 +14,7 @@ def getval(var):
   if var in mem: return mem[var]
   if var.isdigit(): return int(var)
   s = table[var]
-  ogr(s)
+  print(s)
   if 'AND' in s:
     x1,x2 = s.split(' AND ')
     mem[var] = getval(x1) & getval(x2)
@@ -44,12 +44,8 @@ def getval(var):
   return mem[var]
   
 ans = getval('a')
-ogr('Answer 1 :',ans)
+print('Answer 1 :',ans)
 
 mem = {}
 mem['b'] = ans
-ogr('Answer 2:',getval('a'))
-
-
-
-
+print('Answer 2:',getval('a'))

@@ -14,7 +14,7 @@ def counter(list):
          sig = 1
    return sum
 
-ogr('Answer 1:',counter(data))
+print('Answer 1:',counter(data))
 
 #part 2
 
@@ -51,7 +51,7 @@ while q < p:
    p = len(data)
    data = testrun(data)
    q = len(data)
-ogr('Answer 2:',counter(data))
+print('Answer 2:',counter(data))
 
 
 

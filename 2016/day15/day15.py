@@ -17,6 +17,6 @@ for n,line in enumerate(data):
 	part = line.split()
 	disk[n+1] = (int(part[3]), int(part[11][:-1]))
 	
-ogr('Answer 1:', test(len(data) + 1))
+print('Answer 1:', test(len(data) + 1))
 disk[7] = (11,0)
-ogr('Answer 2:', test(len(data) + 2))
+print('Answer 2:', test(len(data) + 2))

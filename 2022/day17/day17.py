@@ -33,9 +33,9 @@ def size_cave(c,n):
 
 cave = [[0,0,0,0,0,0,0]]
 
-ogr(cave)
+print(cave)
 size_cave(cave,4)
-ogr(cave)
+print(cave)
 
 rocks = [[[2, 0], [3, 0], [4, 0], [5, 0]],
          [[2, 1], [3, 1], [3, 2], [3, 0], [4, 1]],
@@ -47,10 +47,10 @@ hight = 0
 
 for i in range(1):
     rock = copy.deepcopy(rocks[i%5])
-    ogr(rock)
+    print(rock)
     fall(rock)
-    ogr(rock)
+    print(rock)
     jet_right(rock)
-    ogr(rock)
+    print(rock)
     jet_left(rock)
-    ogr(rock)
+    print(rock)

@@ -15,5 +15,5 @@ for line in data:
   s1 += int(d1[0] + d1[-1])
   s2 += int(d2[0] + d2[-1])
 
-ogr('Answer 1:',s1)
-ogr('Answer 2:',s2)
+print('Answer 1:',s1)
+print('Answer 2:',s2)
