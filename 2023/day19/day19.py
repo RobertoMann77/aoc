@@ -1,4 +1,3 @@
-
 workflows, parts = open('t.in').read().split('\n\n')
  
 def test_rule(var, values):

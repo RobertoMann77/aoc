@@ -9,7 +9,6 @@ for l,line in enumerate(data):
 	for c,ccc in enumerate(line):
 		data[l][c] = int(data[l][c])
 
-
 def zero_check(a):
 	check = 0
 	for j in a:
@@ -46,6 +45,3 @@ for line in data:
 
 print('Answer 1:', sum1)
 print('Answer 2:', sum2)
-
-
-

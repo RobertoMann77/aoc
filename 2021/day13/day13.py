@@ -1,4 +1,4 @@
-coord, folds = open('13.in').read().split("\n\n")
+coord, folds = open('t.in').read().split("\n\n")
 coord = coord.splitlines()
 folds = folds.splitlines()
 

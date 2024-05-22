@@ -1,5 +1,4 @@
 # input: https://adventofcode.com/2023/day/15
-
 data = open('15.in').read().split(',')
 
 def doit(raw_c,cv):
@@ -11,7 +10,6 @@ for line in data:
 	cv = 0
 	for buchst in line: cv = doit(buchst,cv)
 	sum1 += cv
-j('Answer 1:',sum1)
 
 len_fl = {}
 boxes = {}
@@ -33,7 +31,6 @@ for line in data:
 		
 	cv = 0
 	for buchst in lens[:-1]: cv = doit(buchst,cv)
-	
 
 	if op == '=':
 		found = 0
@@ -54,5 +51,5 @@ for b,box in enumerate(boxes):
 	for l,lens in enumerate(boxes[box]):
 		if lens != '':
 			focus_power += int(lens[-1]) * (b+1) * (l+1)
-j('Answer 2:',focus_power)
+print('Answer 2:',focus_power)
 
